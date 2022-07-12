@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "WebSiteName": {
+            "type": "String"
+        },
+        "aspServerFarmID": {
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2018-11-01",
+            "name": "[parameters('WebSiteName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "name" : "[parameters('WebSiteName')]",
+                "siteConfig": {
+                    "alwaysOn": true,
+                    "minTlsVersion": "1.2"
+                },
+                "serverFarmId": "[parameters('aspServerFarmID')]",
+                "clientAffinityEnabled": true,
+                "virtualNetworkSubnetId": null,
+                "httpsOnly": true,
+                "enabled": true
+            }
+        }
+    ]
+}

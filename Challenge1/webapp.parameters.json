@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "324a370e-464e-4d68-acb7-bf43eff1c23b"
+        },
+        "name": {
+            "value": "frontend-webapi"
+        },
+        "location": {
+            "value": "East US"
+        },
+        "hostingPlanName": {
+            "value": "asp-frontend"
+        },
+        "serverFarmResourceGroup": {
+            "value": "demo-services"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "currentStack": {
+            "value": "dotnetcore"
+        },
+        "phpVersion": {
+            "value": "OFF"
+        },
+        "errorLink": {
+            "value": "https://frontend-webapi.scm.azurewebsites.net/detectors?type=tools&name=eventviewer"
+        }
+    }
+}
